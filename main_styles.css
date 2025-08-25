@@ -1,0 +1,719 @@
+/* main_styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --background-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --border-color: #dee2e6;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* --- Header & Navigation --- */
+.header {
+    background: var(--card-bg);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.header .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.header .nav a {
+    text-decoration: none;
+    color: var(--dark-color);
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.header .nav a:hover {
+    color: var(--primary-color);
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary { background-color: var(--primary-color); }
+.btn-primary:hover { background-color: var(--primary-hover); }
+.btn-danger { background-color: var(--danger-color); }
+
+/* --- Landing Page --- */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+.hero h1 { font-size: 3rem; margin-bottom: 10px; }
+.hero p { font-size: 1.2rem; margin-bottom: 30px; }
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 600px;
+}
+.search-bar input[type="text"] {
+    width: 80%;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px 0 0 5px;
+    font-size: 1rem;
+}
+.search-bar button {
+    padding: 15px 25px;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    font-size: 1rem;
+}
+
+/* Job Listings */
+.job-listing {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+.job-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+}
+.job-card h3 { margin-top: 0; color: var(--primary-color); }
+.job-card .job-budget { font-weight: 600; color: var(--success-color); font-size: 1.2rem; }
+.job-card .job-category { background: #e9ecef; color: #495057; padding: 3px 8px; border-radius: 5px; display: inline-block; font-size: 0.8rem; margin-bottom: 10px; }
+
+/* --- Login & Register Forms --- */
+.form-container {
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 40px;
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--dark-color);
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+.form-container p { text-align: center; }
+.form-container p a { color: var(--primary-color); text-decoration: none; }
+
+/* --- Dashboards --- */
+.dashboard {
+    display: flex;
+    gap: 20px;
+}
+.sidebar {
+    flex: 0 0 250px;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    height: fit-content;
+}
+.sidebar h3 { margin-top: 0; }
+.sidebar ul { list-style: none; padding: 0; }
+.sidebar ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: var(--dark-color);
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s;
+}
+.sidebar ul li a:hover, .sidebar ul li a.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+.main-content {
+    flex: 1;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+.main-content h2 {
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* Generic Table Styles */
+.content-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.content-table th, .content-table td {
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+.content-table thead tr {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: 600;
+}
+.content-table tbody tr:nth-of-type(even) {
+    background-color: var(--light-color);
+}
+
+/* Message Box */
+.message-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+    background: #f9f9f9;
+}
+.message {
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    max-width: 70%;
+}
+.message p { margin: 0; }
+.message small { color: #888; font-size: 0.75rem; }
+.sent {
+    background: #dcf8c6;
+    margin-left: auto;
+    text-align: right;
+}
+.received {
+    background: #fff;
+    border: 1px solid #eee;
+}
+
+/* Alert/Feedback Messages */
+.alert {
+    padding: 15px;
+    margin: 20px 0;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.alert-success { color: #155724; background-color: #d4edda; border-color: #c3e6cb; }
+.alert-danger { color: #721c24; background-color: #f8d7da; border-color: #f5c6cb; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Add these new styles to your existing main_styles.css file */
+
+/* --- Secondary Navigation --- */
+.secondary-nav {
+    background: var(--light-color);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+}
+.secondary-nav .container {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+.secondary-nav a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.secondary-nav a:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* --- How It Works Section --- */
+.how-it-works {
+    background-color: var(--card-bg);
+    padding: 60px 0;
+    text-align: center;
+}
+.how-it-works h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+.steps {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.step {
+    flex-basis: 30%;
+    max-width: 300px;
+}
+.step i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+.step h3 { font-size: 1.5rem; margin-bottom: 10px; }
+.step p { color: var(--secondary-color); }
+
+/* --- Featured Freelancers Section --- */
+.featured-freelancers {
+    padding: 60px 0;
+    background-color: var(--background-color);
+}
+.featured-freelancers h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.freelancer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+.freelancer-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.freelancer-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+.freelancer-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--border-color);
+}
+.freelancer-card h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+}
+.freelancer-card p {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+/* Profile Management - Skills & Education List */
+.item-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+.item-list li {
+    background: var(--light-color);
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.item-list form {
+    margin: 0;
+}
+.delete-btn {
+    background: none;
+    border: none;
+    color: var(--danger-color);
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Public Profile Page Styles --- */
+.public-profile {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.profile-sidebar {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    height: fit-content;
+}
+.profile-sidebar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    margin-bottom: 15px;
+}
+.profile-sidebar h1 { margin: 0; font-size: 1.8rem; }
+.profile-sidebar h2 { font-size: 1.1rem; color: var(--secondary-color); font-weight: 400; margin: 5px 0 15px 0; }
+.profile-sidebar p { color: #555; }
+.profile-sidebar p i { margin-right: 5px; color: var(--primary-color); }
+
+.profile-main {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+.profile-main h3 {
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.profile-main hr {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 30px 0;
+}
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.skill-tag {
+    background: #e9ecef;
+    color: #495057;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.education-item {
+    margin-bottom: 15px;
+}
+.education-item h4 { margin: 0 0 5px 0; font-size: 1.1rem; }
+.education-item p { margin: 0; color: var(--secondary-color); }
+
+/* Responsive adjustment for profile page */
+@media (max-width: 768px) {
+    .public-profile {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Star Rating Input --- */
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  font-size: 2em;
+}
+.star-rating input { display: none; }
+.star-rating label { color: #ccc; cursor: pointer; }
+.star-rating :checked ~ label { color: #f90; }
+.star-rating label:hover,
+.star-rating label:hover ~ label { color: #fc0; }
+
+/* --- Star Rating Display --- */
+.stars {
+  --star-size: 20px;
+  --star-color: #ccc;
+  --star-background: #fc0;
+  --percent: calc(var(--rating) / 5 * 100%);
+  display: inline-block;
+  font-size: var(--star-size);
+  font-family: Times;
+  line-height: 1;
+}
+.stars::before {
+  content: '★★★★★';
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.profile-rating { margin-bottom: 20px; }
+.profile-rating span { vertical-align: middle; margin-left: 10px; }
+
+/* --- Review List Styles --- */
+.review-item {
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 0;
+}
+.review-item:last-child { border-bottom: none; }
+.review-item p { font-style: italic; margin: 10px 0; }
+.review-item small { color: var(--secondary-color); }
+.review-rating .stars { --star-size: 16px; }
+
+/* --- Job Action Box on Messaging Page --- */
+.job-action-box {
+    background: #e9f7ef;
+    border: 1px solid #a3e9a4;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Service Grid & Cards (browse_services.php) --- */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+.service-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    transition: transform 0.2s;
+}
+.service-card:hover { transform: translateY(-5px); }
+.service-card a { text-decoration: none; color: var(--text-color); }
+.service-image { width: 100%; height: 180px; object-fit: cover; }
+.service-card-content { padding: 15px; }
+.freelancer-info { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.freelancer-avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+.freelancer-name { font-weight: 600; }
+.freelancer-level { font-size: 0.8rem; color: var(--secondary-color); display: block; }
+.service-title p { font-weight: 500; height: 40px; overflow: hidden; }
+.service-footer { border-top: 1px solid var(--border-color); padding-top: 10px; margin-top: 10px; }
+.service-price { color: var(--secondary-color); font-size: 0.9rem; }
+.service-price span { font-weight: 700; font-size: 1.2rem; color: var(--dark-color); }
+
+/* --- Single Service View (view_service.php) --- */
+.service-view { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; margin-top: 30px; }
+.service-main-image { width: 100%; border-radius: 8px; margin-bottom: 20px; }
+.service-sidebar .service-price-box { border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; }
+.price-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 15px; }
+.price-amount { font-size: 2rem; font-weight: 700; }
+.freelancer-contact-box { margin-top: 20px; border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; }
+.freelancer-contact-box a { display: flex; align-items: center; gap: 15px; text-decoration: none; color: var(--text-color); }
+.freelancer-contact-box img { width: 60px; height: 60px; border-radius: 50%; }
+
+/* --- Services on Profile Page --- */
+.service-grid-profile { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.service-card-small a { text-decoration: none; color: var(--text-color); }
+.service-card-small img { width: 100%; height: 120px; object-fit: cover; border-radius: 5px; }
+.service-card-small p { font-weight: 500; margin: 5px 0; }
+.service-card-small span { font-weight: 700; }
+
+
+
+
+
+
+
+
+/* --- Hire Action Box on Messaging Page --- */
+.hire-box {
+    background: #fff3cd;
+    border: 1px solid #ffeeba;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.hire-box h4 {
+    margin-top: 0;
+}
+
+.btn-success {
+    background-color: var(--success-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* This style applies to all screen sizes */
+.my-box {
+    width: 800px;
+    background-color: blue;
+}
+
+/* This media query applies ONLY to screens 768px wide or smaller */
+@media (max-width: 768px) {
+    .my-box {
+        /* On small screens, we override the width to be 100% */
+        width: 100%;
+        background-color: red;
+    }
+}
